@@ -1,0 +1,291 @@
+date,wday,name
+2007-01-01,1,The first day of January
+2007-02-17,6,The day preceding Lunar New Year's Day
+2007-02-19,1,The second day of the Lunar New Year
+2007-02-20,2,The third day of the Lunar New Year
+2007-04-05,4,Ching Ming Festival
+2007-04-06,5,Good Friday
+2007-04-07,6,The day following Good Friday
+2007-04-09,1,Easter Monday
+2007-05-01,2,Labour Day
+2007-05-24,4,The Buddha's Birthday
+2007-06-19,2,Tuen Ng Festival
+2007-07-02,1,The day following Hong Kong Special Administrative Region Establishment Day
+2007-09-26,3,The day following Chinese Mid-Autumn Festival
+2007-10-01,1,National Day
+2007-10-19,5,Chung Yeung Festival
+2007-12-25,2,Christmas Day
+2007-12-26,3,The first weekday after Christmas Day
+2008-01-01,2,The first day of January
+2008-02-07,4,Lunar New Year’s Day
+2008-02-08,5,The second day of the Lunar New Year
+2008-02-09,6,The third day of the Lunar New Year
+2008-03-21,5,Good Friday
+2008-03-22,6,The day following Good Friday
+2008-03-24,1,Easter Monday
+2008-04-04,5,Ching Ming Festival
+2008-05-01,4,Labour Day
+2008-05-12,1,The Buddha’s Birthday
+2008-06-09,1,The day following Tuen Ng Festival
+2008-07-01,2,Hong Kong Special Administrative Region Establishment Day
+2008-09-15,1,The day following Chinese Mid-Autumn Festival
+2008-10-01,3,National Day
+2008-10-07,2,Chung Yeung Festival
+2008-12-25,4,Christmas Day
+2008-12-26,5,The first weekday after Christmas Day
+2009-01-01,4,The first day of January
+2009-01-26,1,Lunar New Year’s Day
+2009-01-27,2,The second day of the Lunar New Year
+2009-01-28,3,The third day of the Lunar New Year
+2009-04-04,6,Ching Ming Festival
+2009-04-10,5,Good Friday
+2009-04-11,6,The day following Good Friday
+2009-04-13,1,Easter Monday
+2009-05-01,5,Labour Day
+2009-05-02,6,The Buddha’s Birthday
+2009-05-28,4,Tuen Ng Festival
+2009-07-01,3,Hong Kong Special Administrative Region Establishment Day
+2009-10-01,4,National Day
+2009-10-03,6,Chinese Mid-Autumn Festival
+2009-10-26,1,Chung Yeung Festival
+2009-12-25,5,Christmas Day
+2009-12-26,6,The first weekday after Christmas Day
+2010-01-01,5,The first day of January
+2010-02-13,6,The day preceding Lunar New Year's Day
+2010-02-15,1,The second day of the Lunar New Year
+2010-02-16,2,The third day of the Lunar New Year
+2010-04-02,5,Good Friday
+2010-04-03,6,The day following Good Friday
+2010-04-05,1,Easter Monday
+2010-04-06,2,The day following Ching Ming Festival
+2010-05-01,6,Labour Day
+2010-05-21,5,The Buddha’s Birthday
+2010-06-16,3,Tuen Ng Festival
+2010-07-01,4,Hong Kong Special Administrative Region Establishment Day
+2010-09-23,4,The day following Chinese Mid-Autumn Festival
+2010-10-01,5,National Day
+2010-10-16,6,Chung Yeung Festival
+2010-12-25,6,Christmas Day
+2010-12-27,1,The first weekday after Christmas Day
+2011-01-01,6,The first day of January
+2011-02-03,4,Lunar New Year's Day
+2011-02-04,5,The second day of the Lunar New Year
+2011-02-05,6,The third day of the Lunar New Year
+2011-04-05,2,Ching Ming Festival
+2011-04-22,5,Good Friday
+2011-04-23,6,The day following Good Friday
+2011-04-25,1,Easter Monday
+2011-05-02,1,The day following Labour Day
+2011-05-10,2,The Buddha’s Birthday
+2011-06-06,1,Tuen Ng Festival
+2011-07-01,5,Hong Kong Special Administrative Region Establishment Day
+2011-09-13,2,The day following Chinese Mid-Autumn Festival
+2011-10-01,6,National Day
+2011-10-05,3,Chung Yeung Festival
+2011-12-26,1,The first weekday after Christmas Day
+2011-12-27,2,The second weekday after Christmas Day
+2012-01-02,1,The day following the first day of January
+2012-01-23,1,Lunar New Year's Day
+2012-01-24,2,The second day of the Lunar New Year
+2012-01-25,3,The third day of the Lunar New Year
+2012-04-04,3,Ching Ming Festival
+2012-04-06,5,Good Friday
+2012-04-07,6,The day following Good Friday
+2012-04-09,1,Easter Monday
+2012-04-28,6,The Birthday of the Buddha
+2012-05-01,2,Labour Day
+2012-06-23,6,Tuen Ng Festival
+2012-07-02,1,The day following Hong Kong Special Administrative Region Establishment Day
+2012-10-01,1,The day following the Chinese Mid-Autumn Festival
+2012-10-02,2,The day following National Day
+2012-10-23,2,Chung Yeung Festival
+2012-12-25,2,Christmas Day
+2012-12-26,3,The first weekday after Christmas Day
+2013-01-01,2,The first day of January
+2013-02-11,1,The second day of Lunar New Year
+2013-02-12,2,The third day of Lunar New Year
+2013-02-13,3,The fourth day of Lunar New Year
+2013-03-29,5,Good Friday
+2013-03-30,6,The day following Good Friday
+2013-04-01,1,Easter Monday
+2013-04-04,4,Ching Ming Festival
+2013-05-01,3,Labour Day
+2013-05-17,5,The Birthday of the Buddha
+2013-06-12,3,Tuen Ng Festival
+2013-07-01,1,Hong Kong Special Administrative Region Establishment Day
+2013-09-20,5,The day following the Chinese Mid-Autumn Festival
+2013-10-01,2,National Day
+2013-10-14,1,The day following Chung Yeung Festival
+2013-12-25,3,Christmas Day
+2013-12-26,4,The first weekday after Christmas Day
+2014-01-01,3,The first day of January
+2014-01-31,5,Lunar New Year’s Day
+2014-02-01,6,The second day of Lunar New Year
+2014-02-03,1,The fourth day of Lunar New Year
+2014-04-05,6,Ching Ming Festival
+2014-04-18,5,Good Friday
+2014-04-19,6,The day following Good Friday
+2014-04-21,1,Easter Monday
+2014-05-01,4,Labour Day
+2014-05-06,2,The Birthday of the Buddha
+2014-06-02,1,Tuen Ng Festival
+2014-07-01,2,Hong Kong Special Administrative Region Establishment Day
+2014-09-09,2,The day following the Chinese Mid-Autumn Festival
+2014-10-01,3,National Day
+2014-10-02,4,Chung Yeung Festival
+2014-12-25,4,Christmas Day
+2014-12-26,5,The first weekday after Christmas Day
+2015-01-01,4,The first day of January
+2015-02-19,4,Lunar New Year’s Day
+2015-02-20,5,The second day of Lunar New Year
+2015-02-21,6,The third day of Lunar New Year
+2015-04-03,5,Good Friday
+2015-04-04,6,The day following Good Friday
+2015-04-06,1,The day following Ching Ming Festival*
+2015-04-07,2,The day following Easter Monday*
+2015-05-01,5,Labour Day
+2015-05-25,1,The Birthday of the Buddha
+2015-06-20,6,Tuen Ng Festival
+2015-07-01,3,Hong Kong Special Administrative Region Establishment Day
+2015-09-03,4,The 70th anniversary day of the victory of the Chinese people's war of resistance against Japanese aggression†
+2015-09-28,1,The day following the Chinese Mid-Autumn Festival
+2015-10-01,4,National Day
+2015-10-21,3,Chung Yeung Festival
+2015-12-25,5,Christmas Day
+2015-12-26,6,The first weekday after Christmas Day
+2016-01-01,5,The first day of January
+2016-02-08,1,Lunar New Year’s Day
+2016-02-09,2,The second day of Lunar New Year
+2016-02-10,3,The third day of Lunar New Year
+2016-03-25,5,Good Friday
+2016-03-26,6,The day following Good Friday
+2016-03-28,1,Easter Monday
+2016-04-04,1,Ching Ming Festival
+2016-05-02,1,The day following the Labour Day
+2016-05-14,6,The Birthday of the Buddha
+2016-06-09,4,Tuen Ng Festival
+2016-07-01,5,Hong Kong Special Administrative Region Establishment Day
+2016-09-16,5,The day following the Chinese Mid-Autumn Festival
+2016-10-01,6,National Day
+2016-10-10,1,The day following the Chung Yeung Festival
+2016-12-26,1,The first weekday after Christmas Day
+2016-12-27,2,The second weekday after Christmas Day
+2017-01-02,1,The day following the first day of January
+2017-01-28,6,Lunar New Year’s Day
+2017-01-30,1,The third day of Lunar New Year
+2017-01-31,2,The fourth day of Lunar New Year
+2017-04-04,2,Ching Ming Festival
+2017-04-14,5,Good Friday
+2017-04-15,6,The day following Good Friday
+2017-04-17,1,Easter Monday
+2017-05-01,1,Labour Day
+2017-05-03,3,The Birthday of the Buddha
+2017-05-30,2,Tuen Ng Festival
+2017-07-01,6,Hong Kong Special Administrative Region Establishment Day
+2017-10-02,1,The day following National Day
+2017-10-05,4,The day following the Chinese Mid-Autumn Festival
+2017-10-28,6,Chung Yeung Festival
+2017-12-25,1,Christmas Day
+2017-12-26,2,The first weekday after Christmas Day
+2018-01-01,1,The first day of January
+2018-02-16,5,Lunar New Year's Day
+2018-02-17,6,The second day of Lunar New Year
+2018-02-19,1,The fourth day of Lunar New Year
+2018-03-30,5,Good Friday
+2018-03-31,6,The day following Good Friday
+2018-04-02,1,Easter Monday
+2018-04-05,4,Ching Ming Festival
+2018-05-01,2,Labour Day
+2018-05-22,2,The Birthday of the Buddha
+2018-06-18,1,Tuen Ng Festival
+2018-07-02,1,The day following Hong Kong Special Administrative Region Establishment Day
+2018-09-25,2,The day following the Chinese Mid-Autumn Festival
+2018-10-01,1,National Day
+2018-10-17,3,Chung Yeung Festival
+2018-12-25,2,Christmas Day
+2018-12-26,3,The first weekday after Christmas Day
+2019-01-01,2,The first day of January
+2019-02-05,2,Lunar New Year's Day
+2019-02-06,3,The second day of Lunar New Year
+2019-02-07,4,The third day of Lunar New Year
+2019-04-05,5,Ching Ming Festival
+2019-04-19,5,Good Friday
+2019-04-20,6,The day following Good Friday
+2019-04-22,1,Easter Monday
+2019-05-01,3,Labour Day
+2019-05-13,1,The day following the Birthday of the Buddha
+2019-06-07,5,Tuen Ng Festival
+2019-07-01,1,Hong Kong Special Administrative Region Establishment Day
+2019-09-14,6,The day following the Chinese Mid-Autumn Festival
+2019-10-01,2,National Day
+2019-10-07,1,Chung Yeung Festival
+2019-12-25,3,Christmas Day
+2019-12-26,4,The first weekday after Christmas Day
+2020-01-01,3,The first day of January
+2020-01-25,6,Lunar New Year's Day
+2020-01-27,1,The third day of Lunar New Year
+2020-01-28,2,The fourth day of Lunar New Year*
+2020-04-04,6,Ching Ming Festival
+2020-04-10,5,Good Friday
+2020-04-11,6,The day following Good Friday
+2020-04-13,1,Easter Monday
+2020-04-30,4,Birthday of the Buddha
+2020-05-01,5,Labour Day
+2020-06-25,4,Tuen Ng Festival
+2020-07-01,3,Hong Kong Special Administrative Region Establishment Day
+2020-10-01,4,National Day
+2020-10-02,5,The day following the Chinese Mid-Autumn Festival
+2020-10-26,1,The day following Chung Yeung Festival*
+2020-12-25,5,Christmas Day
+2020-12-26,6,The first weekday after Christmas Day
+2021-01-01,5,The first day of January
+2021-02-12,5,Lunar New Year's Day
+2021-02-13,6,The second day of Lunar New Year
+2021-02-15,1,The fourth day of Lunar New Year
+2021-04-02,5,Good Friday
+2021-04-03,6,The day following Good Friday
+2021-04-05,1,The day following Ching Ming Festival
+2021-04-06,2,The day following Easter Monday
+2021-05-01,6,Labour Day
+2021-05-19,3,Birthday of the Buddha
+2021-06-14,1,Tuen Ng Festival
+2021-07-01,4,Hong Kong Special Administrative Region Establishment Day
+2021-09-22,3,The day following the Chinese Mid-Autumn Festival
+2021-10-01,5,National Day
+2021-10-14,4,Chung Yeung Festival
+2021-12-25,6,Christmas Day
+2021-12-27,1,The first weekday after Christmas Day
+2022-01-01,6,The first day of January
+2022-02-01,2,Lunar New Year's Day
+2022-02-02,3,The second day of Lunar New Year
+2022-02-03,4,The third day of Lunar New Year
+2022-04-05,2,Ching Ming Festival
+2022-04-15,5,Good Friday
+2022-04-16,6,The day following Good Friday
+2022-04-18,1,Easter Monday
+2022-05-02,1,The day following Labour Day
+2022-05-09,1,The day following the Birthday of the Buddha
+2022-06-03,5,Tuen Ng Festival
+2022-07-01,5,Hong Kong Special Administrative Region Establishment Day
+2022-09-12,1,The second day following the Chinese Mid-Autumn Festival
+2022-10-01,6,National Day
+2022-10-04,2,Chung Yeung Festival
+2022-12-26,1,The first weekday after Christmas Day
+2022-12-27,2,The second weekday after Christmas Day
+2023-01-02,1,The day following the first day of January
+2023-01-23,1,The second day of Lunar New Year
+2023-01-24,2,The third day of Lunar New Year
+2023-01-25,3,The fourth day of Lunar New Year
+2023-04-05,3,Ching Ming Festival
+2023-04-07,5,Good Friday
+2023-04-08,6,The day following Good Friday
+2023-04-10,1,Easter Monday
+2023-05-01,1,Labour Day
+2023-05-26,5,The Birthday of the Buddha
+2023-06-22,4,Tuen Ng Festival
+2023-07-01,6,Hong Kong Special Administrative Region Establishment Day
+2023-09-30,6,The day following the Chinese Mid-Autumn Festival
+2023-10-02,1,The day following National Day
+2023-10-23,1,Chung Yeung Festival
+2023-12-25,1,Christmas Day
+2023-12-26,2,The first weekday after Christmas Day
