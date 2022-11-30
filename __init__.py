@@ -1,14 +1,28 @@
 import os
-codepath = os.path.dirname(os.path.abspath(__file__))
+codepath_td = os.path.dirname(os.path.abspath(__file__))
 import sys
 sys.path.append('..')
 
 from datetime import datetime, timedelta
 
+nyhdayfile = open(os.path.join(codepath_td, 'holiday_ny.csv'), 'r')
+nyhdaylines = nyhdayfile.readlines()
+nyhdaylist = [row.split(',')[0] for row in nyhdaylines[1:]]
 
+hkhdayfile = open(os.path.join(codepath_td, 'holiday_hk.csv'), 'r')
+hkhdaylines = hkhdayfile.readlines()
+hkhdaylist = [row.split(',')[0] for row in hkhdaylines[1:]]
 
+def getwkdays(startyr=2007, endyr=2046, form='%Y-%m-%d'):
+    """Get all working days (non-weekend) to string in a list."""
+    dtlist = []
+    date = datetime.strptime(f'{startyr}-01-01', '%Y-%m-%d')
+    while (date.year >= startyr) and (date.year <= endyr):
+        if date.weekday() <= 4:
+            dtlist.append(date.strftime(form))
+        date += timedelta(days=1)
 
-
+    return dtlist
 
 # US stock market holidays
 holidaydictny = {
