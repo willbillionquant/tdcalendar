@@ -5,15 +5,18 @@ sys.path.append('..')
 
 from datetime import datetime, timedelta
 
-nyhdayfile = open(os.path.join(codepath_td, 'holiday_ny.csv'), 'r')
-nyhdaylines = nyhdayfile.readlines()
-nyhdaylist = [row.split(',')[0] for row in nyhdaylines[1:]]
+# US stock market holidays
+holidayfile_ny = open(os.path.join(codepath_td, 'holiday_ny.csv'), 'r')
+holidaylines_ny = holidayfile_ny.readlines()
+holidaylist_ny = [datetime.strptime(row.split(',')[0], '%Y-%m-%d') for row in holidaylines_ny[1:]]
 
-hkhdayfile = open(os.path.join(codepath_td, 'holiday_hk.csv'), 'r')
-hkhdaylines = hkhdayfile.readlines()
-hkhdaylist = [row.split(',')[0] for row in hkhdaylines[1:]]
+# HK stock market holidays
+holidayfile_hk = open(os.path.join(codepath_td, 'holiday_hk.csv'), 'r')
+holidaylines_hk = holidayfile_hk.readlines()
+holidaylist_hk = [datetime.strptime(row.split(',')[0], '%Y-%m-%d') for row in holidaylines_hk[1:]]
 
-def getwkdays(startyr=2007, endyr=2046, form='%Y-%m-%d'):
+# List of all weekdays
+def getwkdays(startyr=1997, endyr=2046, form='%Y-%m-%d'):
     """Get all working days (non-weekend) to string in a list."""
     dtlist = []
     date = datetime.strptime(f'{startyr}-01-01', '%Y-%m-%d')
@@ -23,6 +26,44 @@ def getwkdays(startyr=2007, endyr=2046, form='%Y-%m-%d'):
         date += timedelta(days=1)
 
     return dtlist
+
+workdtlist0 = getwkdays()  #  Format yyyy-mm-dd
+workdtlist1 = getwkdays(form='%Y%m%d')  # Format yyyymmdd
+workdtlist2 = getwkdays(form='%y%m%d')  # Format yymmdd
+
+def gettradedays(holidaylist, startdt=datetime(2010, 1, 1), enddt=datetime(2046, 12, 31), form='%Y-%m-%d'):
+    """Get all trading day spanning a period, excluding holidays."""
+    if form == '%Y-%m-%d':
+        workdtlist = workdtlist0
+    elif form == '%Y%m%d':
+        workdtlist = workdtlist1
+    elif form == '%y%m%d':
+        workdtlist = workdtlist2
+    else:
+        workdtlist = getwkdays(form=form)
+
+    startstr = startdt.strftime(form)
+    endstr = enddt.strftime(form)
+    holidaystrlist = [date.strftime(form) for date in holidaylist]
+    tdlist = [dtstr for dtstr in workdtlist if (dtstr >= startstr) and (dtstr <= endstr)]
+    tdlist = [dtstr for dtstr in tdlist if dtstr not in holidaystrlist]
+
+    return tdlist
+
+def getlatesttradingday(holidaylist, offset=6, form='%Y-%m-%d'):
+    """Obtain the latest trading date."""
+    today = datetime.today() - timedelta(days=1, hours=offset)
+    earlyday = today - timedelta(days=30)
+    tdlist = [dtstr for dtstr in gettradedays(holidaylist, earlyday, today, form)]
+
+    return tdlist[-1]
+
+def getdayslater(date='2022-01-01', numday=0):
+    """Obtain datestring format in the form '%Y-%m-%d %H:%M:%S:%f'."""
+    afterdate = datetime.strptime(date, '%Y-%m-%d') + timedelta(days=numday) - timedelta(seconds=1)
+    afterstr = afterdate.strftime('%Y-%m-%d %H:%M:%S:%f')
+    return afterstr
+
 
 # US stock market holidays
 holidaydictny = {
@@ -116,30 +157,6 @@ def getworkdays(startyr=2015, endyr=2022, form=0):
 
     return dtlist
 
-def gettradedays(holidaydict, form=0):
-    """Get all trading day spanning a couple of years."""
-    assert (form in [0, 1, 2]), 'Inappropriate form!'
-    yearlist = list(holidaydict.keys())
-    yearlist.sort()
-    workdtlist = getworkdays(yearlist[0], yearlist[-1], form)
-    tdlist = workdtlist.copy()
-    holidaylist = []
-    for year in range(yearlist[0], yearlist[-1] + 1):
-        hdaylist = holidaydict[year]
-        if form == 1:
-            hdaylist = [name.replace("-", "") for name in hdaylist]
-        elif form == 2:
-            hdaylist = [name.replace("-", "")[2:] for name in hdaylist]
-        holidaylist += hdaylist
-
-    for date in holidaylist:
-        if date in tdlist:
-            tdlist.remove(date)
-        else:
-            print(f'{date} NOT in working day list.')
-
-    return tdlist
-
 def getltdate(holidaydict, offset=6, form=0):
     """Obtain the latest trading date."""
     ltddate = datetime.today() - timedelta(days=1, hours=offset)
@@ -154,8 +171,3 @@ def getltdate(holidaydict, offset=6, form=0):
 
     return tdlist[-1]
 
-def getdayslater(date='2022-01-01', numday=0):
-    """Obtain datestring format in the form '%Y-%m-%d %H:%M:%S:%f'."""
-    afterdate = datetime.strptime(date, '%Y-%m-%d') + timedelta(days=numday) - timedelta(seconds=1)
-    afterstr = afterdate.strftime('%Y-%m-%d %H:%M:%S:%f')
-    return afterstr
