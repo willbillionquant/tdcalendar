@@ -18,27 +18,31 @@ def gethkexpiry(monthstr='JAN-21'):
     return tdaylist[-2]
 
 hkexpiryfile = os.path.join(codepath_td, 'monthexpiry_hk.csv')
+hkexpirydict = {}
 
 if os.path.exists(hkexpiryfile):
     with open(hkexpiryfile, 'r') as f:
         hkexpirylines = f.readlines()
-        hkexpirydict = {}
+
         for row in hkexpirylines:
             monthstart = datetime.strptime(row[:7], '%Y-%m')
             monthstr = monthstart.strftime('%b-%y').upper()
             hkexpirydict[monthstr] = row[:-1]
-
-    hkexpirylist = list(hkexpirydict.values())
-    hkexpirylist.sort()
-
 else:
-    hkexpirydict = {}
 
-    for year, month in product(range(2007, 2047), range(1, 13)):
-        try:
-            monthstr = (datetime(year, month, 1).strftime('%b-%y')).upper()
-            hkexpirydict[monthstr] = gethkexpiry(monthstr)
-        except:
-            print(f'HK holiday for year {year} NOT available.')
-            break
+    with open(hkexpiryfile, 'w') as f:
+        for year, month in product(range(2007, 2047), range(1, 13)):
+            try:
+                monthstr = (datetime(year, month, 1).strftime('%b-%y')).upper()
+                expiry = gethkexpiry(monthstr)
+                hkexpirydict[monthstr] = expiry
+                f.writelines(expiry)
+            except:
+                print(f'HK holiday for year {year} NOT available.')
+                break
 
+hkexpirylist = list(hkexpirydict.values())
+hkexpirylist.sort()
+
+for key, value in hkexpirydict.items():
+    print(f'{key}: {value}')
