@@ -57,6 +57,9 @@ holidayfile_ny = os.path.join(codepath_td, 'holiday_ny.csv')
 
 if not os.path.exists(holidayfile_ny):
     getnyholidays()
+elif (datetime.today().month == 1) and (datetime.today().day == 1):
+    os.remove(holidayfile_ny)
+    getnyholidays()
 
 with open(holidayfile_ny, 'r') as f:
     holidaylines_ny = f.readlines()
@@ -66,6 +69,9 @@ with open(holidayfile_ny, 'r') as f:
 holidayfile_hk = os.path.join(codepath_td, 'holiday_hk.csv')
 
 if not os.path.exists(holidayfile_hk):
+    gethkholidays()
+elif (datetime.today().month == 1) and (datetime.today().day == 1):
+    os.remove(holidayfile_hk)
     gethkholidays()
 
 with open(holidayfile_hk, 'r') as f:
