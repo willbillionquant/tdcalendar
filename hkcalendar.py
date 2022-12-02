@@ -8,8 +8,8 @@ from itertools import product
 
 from tdcalendar import *
 
-def gethkexpiry(monthstr='JAN-21'):
-    """Obtain HK monthly expiry day in a month."""
+def gethkmonthexpiry(monthstr='JAN-21'):
+    """Obtain HK monthly FOPs expiry, defined as 2nd last HK trading day in a calendar month."""
     monthstart = datetime.strptime(monthstr, '%b-%y')
     monthstr = monthstart.strftime('%Y-%m')
     year = monthstart.year
@@ -37,7 +37,7 @@ else:
         for year, month in product(range(2007, 2047), range(1, 13)):
             try:
                 monthstr = (datetime(year, month, 1).strftime('%b-%y')).upper()
-                expiry = gethkexpiry(monthstr)
+                expiry = gethkmonthexpiry(monthstr)
                 hkexpirydict[monthstr] = expiry
                 f.writelines(f'{expiry}\n')
             except:
