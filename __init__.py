@@ -126,3 +126,7 @@ def getdayslater(date='2022-01-01', numday=0):
     afterdate = datetime.strptime(date, '%Y-%m-%d') + timedelta(days=numday) - timedelta(seconds=1)
     afterstr = afterdate.strftime('%Y-%m-%d %H:%M:%S:%f')
     return afterstr
+
+def getnthweekday(date):
+    """Obtain the nth weekday of a calendar day."""
+    return (date.day-1) // 7 + 1, date.weekday() + 1
