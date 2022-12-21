@@ -8,7 +8,7 @@ from itertools import product
 
 from tdcalendar import *
 
-def gethkmonthexpiry(month='JAN-21'):
+def gethkmonthexpiry(month):
     """Obtain HK monthly FOPs expiry, defined as 2nd last HK trading day in a calendar month."""
     if type(month) == tuple:  # e.g. (2021, 1)
         monthstart = datetime(month[0], month[1], 1)
