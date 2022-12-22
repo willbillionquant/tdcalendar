@@ -113,9 +113,9 @@ def gettradedays(holidaylist, startdt=datetime(2010, 1, 1), enddt=datetime(2046,
 
     return tdlist
 
-def getlatesttradingday(holidaylist, days=1, offset=6, form='%Y-%m-%d'):
+def getlatesttradingday(holidaylist, tday=datetime.today(), days=1, offset=6, form='%Y-%m-%d'):
     """Obtain the latest trading date."""
-    today = datetime.today() - timedelta(days=days, hours=offset)
+    today = tday - timedelta(days=days, hours=offset)
     earlyday = today - timedelta(days=30)
     tdlist = [dtstr for dtstr in gettradedays(holidaylist, earlyday, today, form)]
 
