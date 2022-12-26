@@ -8,7 +8,7 @@ from itertools import product
 
 from tdcalendar import *
 
-def gethkmonthexpiry(month):
+def gethkmonthexpiry(month, form='%Y-%m-%d'):
     """Obtain HK monthly FOPs expiry, defined as 2nd last HK trading day in a calendar month."""
     if type(month) == tuple:  # e.g. (2021, 1)
         monthstart = datetime(month[0], month[1], 1)
@@ -26,7 +26,7 @@ def gethkmonthexpiry(month):
     if holidaylistyr != []:
         tdaylist = gettradedays(holidaylist_hk, datetime(year, 1, 1), datetime(year, 12, 31))
         tdaylist = [dtstr for dtstr in tdaylist if dtstr[:7] == month]
-        return tdaylist[-2]
+        return datetime.strptime(tdaylist[-2], '%Y-%m-%d').strftime(form)
     else:
         raise AttributeError(f'HK Holiday for year {year} NOT available!')
 
