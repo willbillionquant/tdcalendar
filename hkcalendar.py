@@ -55,3 +55,6 @@ else:
 hkexpirylist = list(hkexpirydict.values())
 hkexpirylist.sort()
 
+hkexpirydatelist = [datetime.strptime(dtstr, '%Y-%m-%d') for dtstr in hkexpirylist]
+hkexpirydatelist.sort()
+
