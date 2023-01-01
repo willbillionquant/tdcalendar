@@ -50,7 +50,7 @@ def gethkholidays(startyear=2007, endyear=2046):
             break
 
     dfhday_hk.set_index('date', inplace=True)
-    dfhday_hk.to_csv('holiday_hk.csv')
+    dfhday_hk.to_csv(os.path.join(codepath_td, 'holiday_hk.csv'))
 
 # US stock market holidays
 holidayfile_ny = os.path.join(codepath_td, 'holiday_ny.csv')
