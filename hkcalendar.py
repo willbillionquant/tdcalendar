@@ -52,6 +52,8 @@ else:
             except:
                 break
 
+hkexpirydatedict = {yrmonth: datetime.strptime(expiry, '%Y-%m-%d') for yrmonth, expiry in hkexpirydict.items()}
+
 hkexpirylist = list(hkexpirydict.values())
 hkexpirylist.sort()
 
