@@ -8,53 +8,53 @@ from itertools import product
 
 from tdcalendar import *
 
-def getnymonthexpiry(monthstr='JAN-21'):
+def getMonthExpiry_ny(monthStr='JAN-21'):
     """
     Obtain US monthly option expiry, defined as 3rd Friday or (in case holiday itself) the last trading day
     prior to 3rd Friday.
     """
-    monthstart = datetime.strptime(monthstr, '%b-%y')
-    expirydate = datetime.strptime(monthstr, '%b-%y')
-    while ((expirydate.day // 7 != 2) or (expirydate.weekday() != 4)):
-        expirydate += timedelta(days=1)
+    monthStart = datetime.strptime(monthStr, '%b-%y')
+    expiryDate = datetime.strptime(monthStr, '%b-%y')
+    while ((expiryDate.day // 7 != 2) or (expiryDate.weekday() != 4)):
+        expiryDate += timedelta(days=1)
 
-    holidaylistyr = [date for date in holidaylist_ny if date.year == year]
+    holidayList_year = [date for date in holidayList_ny if date.year == year]
 
-    if holidaylistyr == []:
+    if holidayList_year == []:
         raise AttributeError(f'US Holiday for year {year} NOT available!')
     else:
-        if expirydate in holidaylist_ny:
-            tdlist = gettradedays(holidaylist_ny, monthstart, expirydate)
+        if expiryDate in holidayList_ny:
+            tdlist = getTradingDays(holidayList_ny, monthStart, expiryDate)
             expiry = tdlist[-1]
         else:
-            expiry = expirydate.strftime('%Y-%m-%d')
+            expiry = expiryDate.strftime('%Y-%m-%d')
 
         return expiry
 
-nyexpiryfile = os.path.join(codepath_td, 'monthexpiry_ny.csv')
-nyexpirydict = {}
+expiryFile_ny = os.path.join(codepath_td, 'monthexpiry_ny.csv')
+expiryDict_ny = {}
 
-if os.path.exists(nyexpiryfile):
-    with open(nyexpiryfile, 'r') as f:
-        nyexpirylines = f.readlines()
-        nyexpirydict = {}
-        for row in nyexpirylines:
-            monthstart = datetime.strptime(row[:7], '%Y-%m')
-            monthstr = monthstart.strftime('%b-%y').upper()
-            nyexpirydict[monthstr] = row[:-1]
+if os.path.exists(expiryFile_ny):
+    with open(expiryFile_ny, 'r') as f:
+        expiryLines_ny = f.readlines()
+        expiryDict_ny = {}
+        for row in expiryLines_ny:
+            monthStart = datetime.strptime(row[:7], '%Y-%m')
+            monthStr = monthStart.strftime('%b-%y').upper()
+            expiryDict_ny[monthStr] = row[:-1]
 else:
-    with open(nyexpiryfile, 'w') as f:
+    with open(expiryFile_ny, 'w') as f:
         for year, month in product(range(1999, 2047), range(1, 13)):
             try:
-                monthstr = (datetime(year, month, 1).strftime('%b-%y')).upper()
-                expiry = getnymonthexpiry(monthstr)
-                nyexpirydict[monthstr] = expiry
+                monthStr = (datetime(year, month, 1).strftime('%b-%y')).upper()
+                expiry = getMonthExpiry_ny(monthStr)
+                expiryDict_ny[monthStr] = expiry
                 f.writelines(f'{expiry}\n')
             except:
                 break
 
-nyexpirylist = list(nyexpirydict.values())
-nyexpirylist.sort()
+expiryList_ny = list(expiryDict_ny.values())
+expiryList_ny.sort()
 
 
 
