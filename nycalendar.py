@@ -56,5 +56,6 @@ else:
 expiryList_ny = list(expiryDict_ny.values())
 expiryList_ny.sort()
 
-
+expiryDateList_ny = [datetime.strptime(dayStr, '%Y-%m-%d') for dayStr in expiryList_ny]
+expiryDateList_ny.sort()
 
