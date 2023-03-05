@@ -8,55 +8,55 @@ from itertools import product
 
 from tdcalendar import *
 
-def gethkmonthexpiry(month, form='%Y-%m-%d'):
+def getMonthExpiry_hk(month, form='%Y-%m-%d'):
     """Obtain HK monthly FOPs expiry, defined as 2nd last HK trading day in a calendar month."""
     if type(month) == tuple:  # e.g. (2021, 1)
-        monthstart = datetime(month[0], month[1], 1)
-        month = monthstart.strftime('%Y-%m')
+        monthStart = datetime(month[0], month[1], 1)
+        month = monthStart.strftime('%Y-%m')
     elif type(month) == str:
         if len(month) == 6: # e.g. JAN-21
-            monthstart = datetime.strptime(month, '%b-%y')
-            month = monthstart.strftime('%Y-%m')
+            monthStart = datetime.strptime(month, '%b-%y')
+            month = monthStart.strftime('%Y-%m')
         else:  # e.g. 2021-01
-            monthstart = datetime.strptime(f'{month}-01', '%Y-%m-%d')
+            monthStart = datetime.strptime(f'{month}-01', '%Y-%m-%d')
     else:
         raise AttributeError(f'Input for month must be %b-%y, %Y-%m or (%Y, %m)')
-    year = monthstart.year
-    holidaylistyr = [date for date in holidaylist_hk if date.year == year]
-    if holidaylistyr != []:
-        tdaylist = gettradedays(holidaylist_hk, datetime(year, 1, 1), datetime(year, 12, 31))
-        tdaylist = [dtstr for dtstr in tdaylist if dtstr[:7] == month]
-        return datetime.strptime(tdaylist[-2], '%Y-%m-%d').strftime(form)
+    year = monthStart.year
+    holidayList_year = [date for date in holidayList_hk if date.year == year]
+    if holidayList_year != []:
+        tDayList = getTradingDays(holidayList_hk, datetime(year, 1, 1), datetime(year, 12, 31))
+        tDayList = [dayStr for dayStr in tDayList if dayStr[:7] == month]
+        return datetime.strptime(tDayList[-2], '%Y-%m-%d').strftime(form)
     else:
         raise AttributeError(f'HK Holiday for year {year} NOT available!')
 
-hkexpiryfile = os.path.join(codepath_td, 'monthexpiry_hk.csv')
-hkexpirydict = {}
+expiryFile_hk = os.path.join(codepath_td, 'monthexpiry_hk.csv')
+expiryDict_hk = {}
 
-if os.path.exists(hkexpiryfile):
-    with open(hkexpiryfile, 'r') as f:
-        hkexpirylines = f.readlines()
-        hkexpirydict = {}
-        for row in hkexpirylines:
-            monthstart = datetime.strptime(row[:7], '%Y-%m')
-            monthstr = monthstart.strftime('%b-%y').upper()
-            hkexpirydict[monthstr] = row[:-1]
+if os.path.exists(expiryFile_hk):
+    with open(expiryFile_hk, 'r') as f:
+        expiryLines_hk = f.readlines()
+        expiryDict_hk = {}
+        for row in expiryLines_hk:
+            monthStart = datetime.strptime(row[:7], '%Y-%m')
+            monthStr = monthStart.strftime('%b-%y').upper()
+            expiryDict_hk[monthStr] = row[:-1]
 else:
-    with open(hkexpiryfile, 'w') as f:
+    with open(expiryFile_hk, 'w') as f:
         for year, month in product(range(2007, 2047), range(1, 13)):
             try:
-                monthstr = (datetime(year, month, 1).strftime('%b-%y')).upper()
-                expiry = gethkmonthexpiry(monthstr)
-                hkexpirydict[monthstr] = expiry
+                monthStr = (datetime(year, month, 1).strftime('%b-%y')).upper()
+                expiry = getMonthExpiry_hk(monthStr)
+                expiryDict_hk[monthStr] = expiry
                 f.writelines(f'{expiry}\n')
             except:
                 break
 
-hkexpirydatedict = {yrmonth: datetime.strptime(expiry, '%Y-%m-%d') for yrmonth, expiry in hkexpirydict.items()}
+expiryDateDict_hk = {yrmonth: datetime.strptime(expiry, '%Y-%m-%d') for yrmonth, expiry in expiryDict_hk.items()}
 
-hkexpirylist = list(hkexpirydict.values())
-hkexpirylist.sort()
+expiryList_hk = list(expiryDict_hk.values())
+expiryList_hk.sort()
 
-hkexpirydatelist = [datetime.strptime(dtstr, '%Y-%m-%d') for dtstr in hkexpirylist]
-hkexpirydatelist.sort()
+expiryDateList_hk = [datetime.strptime(dayStr, '%Y-%m-%d') for dayStr in expiryList_hk]
+expiryDateList_hk.sort()
 
